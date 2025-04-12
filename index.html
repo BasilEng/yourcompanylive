@@ -157,53 +157,20 @@
 			<h2>Get your business online today!</h2>
 			<p><strong>Starting at only $199</strong></p>
 
-			<!-- Order Form -->
-			<form id="order-form">
 				<div>
-					<label>
-						<input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
-					</label>
-				</div>
-				<div>
-					<label>
-						<input type="text" name="business" placeholder="Business name" required aria-label="Business name" />
-					</label>
-				</div>
-				<div>
-					<label>
-						<input type="tel" name="number" placeholder="Phone number" required pattern="[0-9+\-\s()]{7,}" aria-label="Phone number" />
-					</label>
-				</div>
-				<button type="submit">Submit</button>
-			</form>
+<form action="https://yourcompanylive.onrender.com/customer" method="POST">
+	<input type="text" name="name" placeholder="Your name" required />
+	<input type="text" name="business" placeholder="Business name" required />
+	<input type="tel" name="number" placeholder="Phone number" required />
+	<button type="submit">Submit</button>
+</form>
 
-			<p id="ticket-response"></p>
 		</div>
 	</div>
 
-	<script>
-		document.getElementById("order-form").addEventListener("submit", async function (e) {
-			e.preventDefault();
 
-			const formData = new FormData(this);
-			const name = formData.get("name");
-			const business = formData.get("business");
-			const number = formData.get("number");
 
-			try {
-				const response = await fetch("http://127.0.0.1:5000/customer", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ name, business, number })
-				});
 
-				const data = await response.json();
-				document.getElementById("ticket-response").textContent = "Thanks! We'll contact you soon.";
-			} catch (error) {
-				console.error("Error submitting form:", error);
-				document.getElementById("ticket-response").textContent = "Something went wrong. Please try again.";
-			}
-		});
-	</script>
+
 </body>
 </html>
