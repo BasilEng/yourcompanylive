@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your business live</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #146fd9; 
+      display: flex;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .bordered-page {
+      background-color: #10100f;
+      padding: 20px;
+      max-width: 1000px;
+      width: 95%;
+      box-sizing: border-box;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .center-container {
+      text-align: center;
+    }
+
+    .center-container img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid black;
+      margin: 20px 0;
+    }
+
+    /* ✨ Services Section Styling */
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border: 1px solid #444;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+      color: #fff;
+	box-sizing: border-box;
+
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #146fd9;
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.6;
+    }
+
+    .card ul li::before {
+      content: "✓ ";
+      color: #146fd9;
+    }
+
+    input, button {
+      margin: 10px 5px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      background-color: #146fd9;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bordered-page">
+    <div class="center-container">
+      <img src="logo.png" alt="Logo" style="width : 300px; height: auto;">
+      <hr />
+
+      <header>
+        <h1>Services:</h1>
+      </header>
+
+      <!-- Services Cards Section -->
+      <div class="services-container">
+        <div class="card">
+          <h3>🌱 Basic</h3>
+          <p class="price">$199</p>
+          <ul>
+            <li>3-page website</li>
+            <li>Custom domain setup</li>
+            <li>QR code linked to site</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🚀 Premium</h3>
+          <p class="price">$299</p>
+          <ul>
+            <li>All Basic services</li>
+            <p> Choose 2:</p>
+            <li>- Logo design</li>
+            <li>- Lead collection funnel</li>
+            <li>- 6-page website</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>💼 The Works</h3>
+          <p class="price">Custom pricing</p>
+          <ul>
+            <li>All Premium services</li>
+            <li>All 3 premium add-ons</li>
+            <li>Advertising strategy</li>
+            <li>System mapping</li>
+            <li>Full brand identity</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h2>Get your business online today!</h2>
+      <p><strong>Starting at only $199</strong></p>
+
+      <!-- Order Form -->
+      <form id="order-form">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="text" name="business" placeholder="Business name" required />
+        <input type="text" name="number" placeholder="Phone number" required />
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="ticket-response"></p>
+    </div>
+  </div>
+
+const response = await fetch("https://yourdomain.com/customer", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, business, number })
+});
+
+<script>
+
+</script>
+
+</body>
+</html>
