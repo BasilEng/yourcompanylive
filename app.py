@@ -2,6 +2,7 @@ import csv
 from flask import Flask, request, jsonify
 from waitress import serve
 
+
 app = Flask(__name__)
 
 # Function to write leads to a CSV file
