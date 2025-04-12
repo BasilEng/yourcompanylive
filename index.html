@@ -106,6 +106,33 @@
 	</style>
 </head>
 
+
+
+<script>
+	document.getElementById("order-form").addEventListener("submit", function (e) {
+		e.preventDefault(); // stop the redirect
+
+		const form = e.target;
+		const formData = new FormData(form);
+
+		const xhr = new XMLHttpRequest();
+		xhr.open("POST", form.action);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+				form.reset();
+				document.getElementById("confirmation").style.display = "block";
+			} else {
+				alert("Something went wrong. Try again.");
+			}
+		};
+
+		xhr.send(new URLSearchParams(formData).toString());
+	});
+</script>
+
+
 <body>
 	<div class="bordered-page">
 		<div class="center-container">
@@ -157,13 +184,46 @@
 			<h2>Get your business online today!</h2>
 			<p><strong>Starting at only $199</strong></p>
 
-				<div>
-<form action="https://yourcompanylive.onrender.com/customer" method="POST">
+		<div>
+<form action="https://script.google.com/macros/s/AKfycbx608dfvHCpIuQN54pFN2d1_9soq_05bybQh65DAQf1TMbhlBdSxVeLqXJu4P_BiTah/exec" method="POST">
 	<input type="text" name="name" placeholder="Your name" required />
 	<input type="text" name="business" placeholder="Business name" required />
 	<input type="tel" name="number" placeholder="Phone number" required />
 	<button type="submit">Submit</button>
 </form>
+
+<p id="confirmation" style="display:none; font-weight:bold; margin-top: 10px;">
+	Thanks! We'll contact you soon.
+</p>
+
+<script>
+	document.querySelector("form").addEventListener("submit", function (e) {
+		e.preventDefault();
+
+		const form = e.target;
+		const formData = new FormData(form);
+		const xhr = new XMLHttpRequest();
+
+		xhr.open("POST", form.action);
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+				form.reset();
+				document.getElementById("confirmation").style.display = "block";
+			} else {
+				alert("Something went wrong.");
+			}
+		};
+
+		xhr.send(new URLSearchParams(formData).toString());
+	});
+</script>
+
+
+<!-- Success message placeholder -->
+<p id="confirmation" style="display:none; font-weight: bold; margin-top: 10px;">
+	Thanks! We'll contact you soon.
+</p>
+
 
 		</div>
 	</div>
