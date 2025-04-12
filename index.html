@@ -103,6 +103,12 @@
 			color: #000;
 			cursor: pointer;
 		}
+
+
+		#toast {
+			transition: opacity 0.3s ease;
+		}
+
 	</style>
 </head>
 
@@ -176,12 +182,12 @@
 
 
 <script>
-	// Run this after the DOM is loaded
 	document.addEventListener("DOMContentLoaded", function () {
 		const form = document.getElementById("order-form");
+		const toast = document.getElementById("toast");
 
 		form.addEventListener("submit", function (e) {
-			e.preventDefault(); // 🛑 STOP redirect
+			e.preventDefault();
 
 			const formData = new FormData(form);
 			const xhr = new XMLHttpRequest();
@@ -190,7 +196,17 @@
 			xhr.onload = function () {
 				if (xhr.status === 200) {
 					form.reset();
-					document.getElementById("confirmation").style.display = "block";
+
+					// ✅ Show the toast
+					toast.style.display = "block";
+					toast.style.opacity = "1";
+
+					setTimeout(() => {
+						toast.style.opacity = "0";
+						setTimeout(() => {
+							toast.style.display = "none";
+						}, 300); // Wait for fade-out
+					}, 3000);
 				} else {
 					alert("Something went wrong.");
 				}
@@ -201,6 +217,7 @@
 		});
 	});
 </script>
+
 
 <div id="toast" style="
 	position: fixed;
@@ -216,7 +233,7 @@
 	z-index: 9999;
 	font-weight: bold;
 ">
-	Thanks! We'll contact you soon test
+	Thanks! We'll contact you soon.
 </div>
 
 
