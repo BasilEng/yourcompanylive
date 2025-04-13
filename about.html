@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Your business live</title>
+	<title>Your Business Live</title>
 	<style>
 		body {
 			margin: 0;
@@ -23,6 +23,38 @@
 			min-height: 100vh;
 		}
 
+		nav.top-nav {
+			background-color: #0e0e0e;
+			padding: 10px 20px;
+			display: flex;
+			gap: 15px;
+			margin-bottom: 30px;
+			border-radius: 8px;
+		}
+
+		.nav-btn {
+			background-color: #1e1e1e;
+			color: #146fd9;
+			text-decoration: none;
+			padding: 8px 16px;
+			border-radius: 8px;
+			font-weight: bold;
+			font-size: 0.95rem;
+			box-shadow:
+				inset 0 2px 3px rgba(255,255,255,0.1),
+				0 2px 5px rgba(0,0,0,0.5);
+			transition: all 0.2s ease;
+		}
+
+		.nav-btn:hover {
+			background-color: #146fd9;
+			color: #000;
+			box-shadow:
+				inset 0 2px 4px rgba(255,255,255,0.2),
+				0 4px 8px rgba(0,0,0,0.7);
+			transform: translateY(-1px);
+		}
+
 		img {
 			max-width: 100%;
 			height: auto;
@@ -38,79 +70,46 @@
 			margin-bottom: 20px;
 		}
 
+		h1 {
+			color: #146fd9;
+			margin-top: 10px;
+		}
+
+		p {
+			font-size: 1.05rem;
+			line-height: 1.6;
+			margin: 10px 0;
+		}
+
 		hr {
 			border: 0;
-			border-top: 1px solid black;
+			border-top: 1px solid #444;
 			margin: 20px 0;
 		}
-
-
-
-		.nav-btn {
-			background-color: #1e1e1e;
-			color: #146fd9;
-			text-decoration: none;
-			padding: 8px 16px;
-			border-radius: 8px;
-			font-weight: bold;
-			font-size: 0.95rem;
-			box-shadow:
-			inset 0 2px 3px rgba(255,255,255,0.1),
-			0 2px 5px rgba(0,0,0,0.5);
-		transition: all 0.2s ease;
-		}
-
-		.nav-btn:hover {
-			background-color: #146fd9;
-			color: #000;
-			box-shadow:
-			inset 0 2px 4px rgba(255,255,255,0.2),
-			0 4px 8px rgba(0,0,0,0.7);
-			transform: translateY(-1px);
-		}
-
-
-
 	</style>
 </head>
 
-
-
-
-
-
 <body>
-
-
-
 	<div class="bordered-page">
+
 		<nav class="top-nav">
 			<a href="index.html" class="nav-btn">Home</a>
 			<a href="about.html" class="nav-btn">Info</a>
 		</nav>
 
-	
-
-
-
-
 		<div class="center-container">
-			<img src="logo.png" alt="Logo" style="width : 300px; height: auto;">
+			<img src="logo.png" alt="Logo">
 			<hr />
 
 			<header>
-				<h1>Why our services? </h1>
+				<h1>Why our services?</h1>
 			</header>
 
-
-			<p>We host your website free - no preimum services and no monthly fees</p>
-			<p>You own your website - you do not have to pay us to keep it online</p>
-			<p>No maintenance fees - Pay a flat fee only when service is provided</p>
-
-		<\div>
-
+			<p>✅ We host your website free — no premium services, no monthly fees.</p>
+			<p>✅ You own your website — you do not have to pay us to keep it online.</p>
+			<p>✅ No maintenance fees — pay a flat fee only when service is provided.</p>
+		</div>
 
 	</div>
-
 </body>
 </html>
