@@ -7,8 +7,8 @@
 	<style>
 		body {
 			margin: 0;
-			font-family: sans-serif;
-			background-color: #146fd9; 
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #146fd9;
 			display: flex;
 			justify-content: center;
 			color: #fff;
@@ -16,11 +16,14 @@
 
 		.bordered-page {
 			background-color: #10100f;
-			padding: 20px;
+			padding: 40px 20px;
 			max-width: 1000px;
 			width: 95%;
 			box-sizing: border-box;
 			min-height: 100vh;
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+			border-radius: 12px;
+			position: relative;
 		}
 
 		nav.top-nav {
@@ -28,8 +31,10 @@
 			padding: 10px 20px;
 			display: flex;
 			gap: 15px;
-			margin-bottom: 30px;
 			border-radius: 8px;
+			position: absolute;
+			top: 20px;
+			left: 20px;
 		}
 
 		.nav-btn {
@@ -55,36 +60,54 @@
 			transform: translateY(-1px);
 		}
 
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-
 		.center-container {
 			text-align: center;
+			margin-top: 100px;
 		}
 
 		.center-container img {
-			width: 200px;
+			width: 180px;
 			height: auto;
-			margin-bottom: 20px;
+			margin-bottom: 25px;
+			filter: drop-shadow(0 0 10px rgba(20, 111, 217, 0.5));
 		}
 
 		h1 {
 			color: #146fd9;
-			margin-top: 10px;
+			font-size: 1.8rem;
+			margin-top: 40px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
 		}
 
 		p {
-			font-size: 1.05rem;
-			line-height: 1.6;
+			font-size: 1.1rem;
+			line-height: 1.7;
 			margin: 10px 0;
 		}
 
 		hr {
 			border: 0;
-			border-top: 1px solid #444;
-			margin: 20px 0;
+			border-top: 2px solid #146fd9;
+			width: 60%;
+			margin: 30px auto;
+		}
+
+		.fade-in {
+			opacity: 0;
+			transform: translateY(20px);
+			animation: fadeInUp 0.6s ease forwards;
+		}
+
+		.fade-in:nth-child(1) { animation-delay: 0.2s; }
+		.fade-in:nth-child(2) { animation-delay: 0.4s; }
+		.fade-in:nth-child(3) { animation-delay: 0.6s; }
+
+		@keyframes fadeInUp {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 	</style>
 </head>
@@ -97,34 +120,26 @@
 			<a href="about.html" class="nav-btn">Info</a>
 		</nav>
 
-		<div class="center-container">
-			<img src="logo.png" alt="Logo">
+		<div class="center-container fade-in">
+			<img src="logo.png" alt="Logo" />
 			<hr />
+		</div>
 
-			<header>
-				<h1>Why our services?</h1>
-			</header>
+		<div class="center-container">
+			<header class="fade-in"><h1>Why our services?</h1></header>
+			<p class="fade-in">✅ We host your website free — no premium services, no monthly fees.</p>
+			<p class="fade-in">✅ You own your website — you do not have to pay us to keep it online.</p>
+			<p class="fade-in">✅ No maintenance fees — pay a flat fee only when service is provided.</p>
 
-			<p>✅ We host your website free — no premium services, no monthly fees.</p>
-			<p>✅ You own your website — you do not have to pay us to keep it online.</p>
-			<p>✅ No maintenance fees — pay a flat fee only when service is provided.</p>
+			<header class="fade-in"><h1>All You Pay</h1></header>
+			<p class="fade-in">✅ Yearly domain fee under $20</p>
+			<p class="fade-in">✅ Initial website build starting at $199</p>
+			<p class="fade-in">✅ Service fee only for major updates</p>
 
-			<header>
-				<h1>All you pay</h1>
-			</header>
-
-			<p>✅ Yearly domain fee does not exceed $20 per year </p>
-			<p>✅ Initial website cost starting at $199 </p>
-			<p>✅ Service fee only charged for major changes</p>
-
-
-			<header>
-				<h1>what do You save?</h1>
-			</header>
-
-			<p>✅ Expensive monthly costs to keep your website running</p>
-			<p>✅ Pointless upgrades for necessary features</p>
-			<p>✅ Headaches dealing with robots and call centers</p>
+			<header class="fade-in"><h1>What You Save</h1></header>
+			<p class="fade-in">✅ Monthly hosting bills</p>
+			<p class="fade-in">✅ Costly premium add-ons</p>
+			<p class="fade-in">✅ Wasted time dealing with big platforms and call centers</p>
 		</div>
 
 	</div>
